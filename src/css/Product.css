@@ -1,0 +1,49 @@
+.image {
+    width: 150px;
+    height: 200px;
+}
+
+.card {
+    width: 250px;
+    height: 420px;
+    box-shadow: 1px 4px 3px lightgrey;
+    margin: 18px;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.card:hover {
+    box-shadow: 1px 4px 3px rgb(139, 139, 139);
+    transition: all 0.5s;
+}
+
+.title {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.price {
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.detail-button {
+    width: 80%;
+    background-color: #9b9b9b;
+    color: #fff;
+    padding: 5px 0;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.detail-button:hover {
+    opacity: 0.7;
+    transition: all 0.5s;
+}
+
+.detail-button h5 {
+    text-align: center;
+    font-size: 18px;
+}

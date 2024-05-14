@@ -1,13 +1,19 @@
 .header {
-    padding: 10px 0;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #eeeeee;
+    color: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
 }
 
 .logo {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -32,4 +38,20 @@
     font-size: 22px;
     cursor: pointer;
     margin-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 10px 40px;
+        display: block;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
 }
