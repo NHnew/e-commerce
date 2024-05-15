@@ -3,6 +3,7 @@ import '../css/Header.css';
 import { CiShoppingBasket, CiLight } from "react-icons/ci";
 import { IoMoon } from "react-icons/io5";
 import Logo from '../images/logo.png';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -24,10 +25,10 @@ const Header = () => {
 
     return (
         <div className='header'>
-            <div className='flex-row'>
+            <Link to='/' className='flex-row'>
                 <img className='logo' src={Logo} alt="logo" />
                 <p className='logo-text'>HN-Store</p>
-            </div>
+            </Link>
             <div className='flex-row'>
                 <input className='search-input' type="text" placeholder='Search' />
                 <div className='flex-row'>
