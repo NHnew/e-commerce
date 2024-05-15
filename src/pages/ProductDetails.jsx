@@ -28,7 +28,7 @@ const ProductDetails = () => {
     };
 
     return (
-        <div className='pt-[120px] mb-[20px] flex items-center'>
+        <div className='detailsInfoBox pt-[120px] mb-[20px] flex items-center'>
             <div className='w-2/5 details-imgbox'>
                 <img className='details-img' src={image} alt="" />
             </div>
