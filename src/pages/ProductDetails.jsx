@@ -1,8 +1,14 @@
 import React from 'react';
 
 const ProductDetails = () => {
+
+
     return (
-        <div className='mt-[80px]'>ProductDetails</div>
+        <div className='mt-[80px]'>
+
+            Product-Details
+
+        </div>
     );
 };
 
