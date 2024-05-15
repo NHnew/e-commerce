@@ -1,0 +1,51 @@
+.details-img {
+    width: 350px;
+    height: 450px;
+}
+
+.details-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.details-text h2,
+h5 {
+    font-weight: 700;
+}
+
+.details-text h2 {
+    font-size: 40px;
+}
+
+.details-text p {
+    color: gray;
+    margin: 10px 0;
+}
+
+.details-text h4 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.details-text h5 {
+    font-size: 50px;
+    color: #95BF46;
+}
+
+.details-span {
+    font-size: 25px;
+    color: gray;
+    font-weight: 0;
+}
+
+.countDetailsPrice {
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.countDetailsPrice:hover {
+    opacity: 0.6;
+    transition: all 0.2s;
+}
+
