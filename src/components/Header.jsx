@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../css/Header.css';
 import { CiShoppingBasket, CiLight } from "react-icons/ci";
 import { IoMoon } from "react-icons/io5";
+import Logo from '../images/logo.png';
 
 
 const Header = () => {
@@ -24,7 +25,7 @@ const Header = () => {
     return (
         <div className='header'>
             <div className='flex-row'>
-                <img className='logo' src="./src/images/BIGfavicon.png" alt="logo" />
+                <img className='logo' src={Logo} alt="logo" />
                 <p className='logo-text'>HN-Store</p>
             </div>
             <div className='flex-row'>
