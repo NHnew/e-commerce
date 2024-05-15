@@ -24,7 +24,7 @@ const Header = () => {
     return (
         <div className='header'>
             <div className='flex-row'>
-                <img className='logo' src="./src/images/logo.webp" alt="logo" />
+                <img className='logo' src="./src/images/logo.png" alt="logo" />
                 <p className='logo-text'>HN-Store</p>
             </div>
             <div className='flex-row'>
