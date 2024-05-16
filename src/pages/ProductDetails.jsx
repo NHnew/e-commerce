@@ -5,6 +5,7 @@ import { setSelectedProduct } from '../redux/slices/productSlice';
 import '../css/ProductDetails.css';
 import { CiCirclePlus, CiCircleMinus } from "react-icons/ci";
 import Button from '@mui/material/Button';
+import { addToBasket } from '../redux/slices/basketSlice';
 
 
 const ProductDetails = () => {
@@ -14,6 +15,23 @@ const ProductDetails = () => {
     const dispatch = useDispatch();
 
     const { price, title, description, image, category } = selectedProduct;
+
+
+    const addBasket = () => {
+        const payload = {
+            id,
+            price,
+            title,
+            description,
+            image,
+            category,
+            priceCount
+        };
+
+        dispatch(addToBasket(payload));
+    };
+
+
 
     useEffect(() => {
         getProductById();
@@ -46,7 +64,7 @@ const ProductDetails = () => {
                     <span className='text-4xl mx-5'>{priceCount}</span>
                     <CiCircleMinus onClick={() => priceCount === 0 ? "" : setPriceCount(priceCount - 1)} className='countDetailsPrice' />
                 </div>
-                <Button variant="contained" disableElevation>
+                <Button onClick={addBasket} variant="contained" disableElevation>
                     Add Basket
                 </Button>
             </div>
