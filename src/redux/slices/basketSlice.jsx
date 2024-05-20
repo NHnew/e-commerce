@@ -10,7 +10,8 @@ const getBasketFormStorge = () => {
 
 const initialState = {
     products: getBasketFormStorge(),
-    drawer: false
+    drawer: false,
+    totalAmount: 0
 };
 
 
@@ -38,11 +39,17 @@ export const basketSilce = createSlice({
 
         toggleDrawer: (state) => {
             state.drawer = !state.drawer;
+        },
+
+        calculateSum: (state) => {
+            state.products && state.products.map(product => {
+                state.totalAmount += product.price;
+            });
         }
     }
 });
 
 
-export const { addToBasket, toggleDrawer } = basketSilce.actions;
+export const { addToBasket, toggleDrawer, calculateSum } = basketSilce.actions;
 
 export default basketSilce.reducer;
