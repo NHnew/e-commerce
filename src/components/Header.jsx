@@ -5,7 +5,8 @@ import { IoMoon } from "react-icons/io5";
 import Logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 import Badge from '@mui/material/Badge';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleDrawer } from '../redux/slices/basketSlice';
 
 
 const Header = () => {
@@ -13,6 +14,8 @@ const Header = () => {
     const [theme, setTheme] = useState(false);
 
     const { products } = useSelector(store => store.basket);
+
+    const dispatch = useDispatch();
 
     const changeTheme = () => {
         const root = document.getElementById("root");
@@ -39,12 +42,12 @@ const Header = () => {
                     {
                         theme ? <IoMoon className='icon' onClick={changeTheme} /> : <CiLight className='icon' onClick={changeTheme} />
                     }
-                    <Badge badgeContent={products.length} color="error">
+                    <Badge onClick={() => dispatch(toggleDrawer())} badgeContent={products.length} color="error">
                         <CiShoppingBasket style={{ marginRight: '0' }} className='icon' />
                     </Badge>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

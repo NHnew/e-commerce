@@ -5,12 +5,14 @@ import RouterConfig from './config/RouterConfig';
 import Loading from './components/Loading';
 import { useLocation } from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleDrawer } from './redux/slices/basketSlice';
 
 const App = () => {
 
   const { pathname } = useLocation();
-  const { products } = useSelector(store => store.product);
+  const { products, drawer } = useSelector(store => store.basket);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -23,7 +25,7 @@ const App = () => {
       <PageContainer>
         <RouterConfig />
         <Loading />
-        <Drawer anchor='right' open={true}>
+        <Drawer onClose={() => dispatch(toggleDrawer())} anchor='right' open={drawer}>
           {
             products && products.map(product => {
               return (
@@ -31,10 +33,13 @@ const App = () => {
                   <div>
                     <img src={product.image} width={70} height={70} />
                   </div>
-                  <div className='w-64'>
-                    <p>{product.title}</p>
-                    <p>{product.price}</p>
+                  <div className='w-64 mx-6'>
+                    <p className='font-semibold'>{product.title}</p>
+                    <p className='font-extrabold text-xl mt-2'>{product.price}$</p>
                   </div>
+                  <button className="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-2 border-b-4 border-red-700 hover:border-red-500 rounded">
+                    Delete
+                  </button>
                 </div>
               );
             })

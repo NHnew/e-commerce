@@ -9,7 +9,8 @@ const getBasketFormStorge = () => {
 
 
 const initialState = {
-    products: getBasketFormStorge()
+    products: getBasketFormStorge(),
+    drawer: false
 };
 
 
@@ -33,11 +34,15 @@ export const basketSilce = createSlice({
                 state.products = [...state.products, action.payload];
                 writeFromBasketStorage(state.products);
             }
+        },
+
+        toggleDrawer: (state) => {
+            state.drawer = !state.drawer;
         }
     }
 });
 
 
-export const { addToBasket } = basketSilce.actions;
+export const { addToBasket, toggleDrawer } = basketSilce.actions;
 
 export default basketSilce.reducer;
