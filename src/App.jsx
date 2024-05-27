@@ -6,7 +6,7 @@ import Loading from './components/Loading';
 import { useLocation } from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
 import { useDispatch, useSelector } from 'react-redux';
-import { calculateSum, toggleDrawer } from './redux/slices/basketSlice';
+import { calculateSum, removeProduct, toggleDrawer } from './redux/slices/basketSlice';
 
 const App = () => {
 
@@ -21,6 +21,9 @@ const App = () => {
   useEffect(() => {
     dispatch(calculateSum());
   }, []);
+
+
+
 
 
   return (
@@ -41,7 +44,7 @@ const App = () => {
                     <p className='font-semibold'>{product.title} <span style={{ color: '#38a169', marginLeft: '5px' }}>( {product.priceCount} )</span></p>
                     <p className='font-extrabold text-xl mt-2'>{product.price}$</p>
                   </div>
-                  <button className="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-2 border-b-4 border-red-700 hover:border-red-500 rounded">
+                  <button onClick={() => dispatch(removeProduct(product.id))} className="bg-red-500 hover:bg-red-400 text-white font-bold py-1 px-2 border-b-4 border-red-700 hover:border-red-500 rounded">
                     Delete
                   </button>
                 </div>

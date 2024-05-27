@@ -45,11 +45,16 @@ export const basketSilce = createSlice({
             state.products && state.products.map(product => {
                 state.totalAmount += product.price;
             });
-        }
+        },
+
+        removeProduct: (state, action) => {
+            state.products = state.products.filter(product => product.id !== action.payload);
+            writeFromBasketStorage(state.products);
+        },
     }
 });
 
 
-export const { addToBasket, toggleDrawer, calculateSum } = basketSilce.actions;
+export const { addToBasket, toggleDrawer, calculateSum, removeProduct } = basketSilce.actions;
 
 export default basketSilce.reducer;
