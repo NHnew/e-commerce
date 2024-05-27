@@ -27,15 +27,15 @@ const ProductDetails = () => {
             category,
             priceCount
         };
-
-        dispatch(addToBasket(payload));
+        if (priceCount != 0) {
+            dispatch(addToBasket(payload));
+        }
     };
-
-
 
     useEffect(() => {
         getProductById();
     }, []);
+
 
     const getProductById = () => {
         products && products.map((product) => {
