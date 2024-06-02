@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import PageContainer from './container/PageContainer';
 import Header from './components/Header';
 import RouterConfig from './config/RouterConfig';
-import Loading from './components/Loading';
 import { useLocation } from 'react-router-dom';
 import Drawer from '@mui/material/Drawer';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,14 +22,11 @@ const App = () => {
   }, []);
 
 
-
-
   return (
     <div>
       <Header />
       <PageContainer>
         <RouterConfig />
-        <Loading />
         <Drawer onClose={() => dispatch(toggleDrawer())} anchor='right' open={drawer}>
           {
             products && products.map((product, index) => {
